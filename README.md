@@ -1,1 +1,1 @@
-# Johnson-s-Rule-algorithm-m2
+# Johnson rule to sequence ‘n’ jobs on 2 machines.
