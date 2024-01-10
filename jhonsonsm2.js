@@ -34,11 +34,4 @@ function johnsonsRule(jobs) {
     return sequence;
 }
 
-// Calculate completion times for each job
-const jobSequence = johnsonsRule(jobs);
-
-// Display the correct job sequence
-console.log('Job Sequence:', jobSequence);
-
-
 
