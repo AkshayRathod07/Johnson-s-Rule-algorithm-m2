@@ -49,43 +49,43 @@ console.log('Job Sequence:', jobSequence);
 
 
 // Function to calculate idle time and percentage utilization
-function calculateIdleTimeAndUtilization(jobs, sequence) {
-    const n = jobs.length;
-    let elapsed = 0;
-    let idleM1 = 0;
-    let idleM2 = 0;
+// function calculateIdleTimeAndUtilization(jobs, sequence) {
+//     const n = jobs.length;
+//     let elapsed = 0;
+//     let idleM1 = 0;
+//     let idleM2 = 0;
 
-    // Calculate completion time for Machine M1
-    let completionTimeM1 = 0;
-    for (let i = 0; i < n; i++) {
-        const currentJob = jobs.find(job => job.name === sequence[i]);
-        completionTimeM1 += currentJob.M1;
-        elapsed = Math.max(elapsed, completionTimeM1);
-        idleM1 = elapsed - completionTimeM1;
-    }
+//     // Calculate completion time for Machine M1
+//     let completionTimeM1 = 0;
+//     for (let i = 0; i < n; i++) {
+//         const currentJob = jobs.find(job => job.name === sequence[i]);
+//         completionTimeM1 += currentJob.M1;
+//         elapsed = Math.max(elapsed, completionTimeM1);
+//         idleM1 = elapsed - completionTimeM1;
+//     }
 
-    // Calculate completion time for Machine M2
-    let completionTimeM2 = elapsed;
-    for (let i = n - 1; i >= 0; i--) {
-        const currentJob = jobs.find(job => job.name === sequence[i]);
-        completionTimeM2 += currentJob.M2;
-        elapsed = Math.max(elapsed, completionTimeM2);
-        idleM2 = elapsed - completionTimeM2;
-    }
+//     // Calculate completion time for Machine M2
+//     let completionTimeM2 = elapsed;
+//     for (let i = n - 1; i >= 0; i--) {
+//         const currentJob = jobs.find(job => job.name === sequence[i]);
+//         completionTimeM2 += currentJob.M2;
+//         elapsed = Math.max(elapsed, completionTimeM2);
+//         idleM2 = elapsed - completionTimeM2;
+//     }
 
-    // Calculate percentage utilization
-    const utilizationM1 = ((elapsed - idleM1) / elapsed) * 100;
-    const utilizationM2 = ((elapsed - idleM2) / elapsed) * 100;
+//     // Calculate percentage utilization
+//     const utilizationM1 = ((elapsed - idleM1) / elapsed) * 100;
+//     const utilizationM2 = ((elapsed - idleM2) / elapsed) * 100;
 
-    return { elapsed, idleM1, idleM2, utilizationM1, utilizationM2 };
-}
+//     return { elapsed, idleM1, idleM2, utilizationM1, utilizationM2 };
+// }
 
 // Calculate idle time and percentage utilization
-const results = calculateIdleTimeAndUtilization(jobs, jobSequence);
+// const results = calculateIdleTimeAndUtilization(jobs, jobSequence);
 
 // Display the results
-console.log('Minimum Elapsed Time:', results.elapsed, 'minutes');
-console.log('Idle Time for Machine M1:', results.idleM1, 'minutes');
-console.log('Idle Time for Machine M2:', results.idleM2, 'minutes');
-console.log('Percentage Utilization of Machine M1:', results.utilizationM1.toFixed(2) + '%');
-console.log('Percentage Utilization of Machine M2:', results.utilizationM2.toFixed(2) + '%');
+// console.log('Minimum Elapsed Time:', results.elapsed, 'minutes');
+// console.log('Idle Time for Machine M1:', results.idleM1, 'minutes');
+// console.log('Idle Time for Machine M2:', results.idleM2, 'minutes');
+// console.log('Percentage Utilization of Machine M1:', results.utilizationM1.toFixed(2) + '%');
+// console.log('Percentage Utilization of Machine M2:', results.utilizationM2.toFixed(2) + '%');
